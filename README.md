@@ -1,9 +1,9 @@
-# raspmonitor
-Just a RaspberryPi PHP monitoring script. 
+# RaspMonitor
+Juste un script de monitoring pour votre raspberrypi ;) 
 
 ##Installation : 
--Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspibian un serveur LAMP fonctionnel.
--Téléchargez le script et placez le sur votre raspberrypi ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout ! . 
+- Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspibian un serveur LAMP fonctionnel.
+- Téléchargez le script et placez le sur votre raspberrypi ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout ! . 
 
 ##Licence : 
 
