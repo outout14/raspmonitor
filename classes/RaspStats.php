@@ -41,7 +41,7 @@ abstract class RaspStats{
      * @see apache_get_version()
      * @return string
      */
-    public function getApacheVersion(){
+    public static function getApacheVersion(){
         $version = apache_get_version();
         return ($version ? $version : 'Failed to get Apache version');
     }
@@ -50,7 +50,7 @@ abstract class RaspStats{
      * @see php_uname()
      * @return string
      */
-    public function getOSInformation(){
+    public static function getOSInformation(){
         return php_uname();
     }
 }
