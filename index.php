@@ -54,7 +54,7 @@ include('raspmonitor.php');
   <!-- Jumbo -->
   <div class="jumbotron" style="padding: 1%">
 	<h1>RaspMonitor</h1>
-	<p>Gardez un oeuil sur votre RaspberryPi !</p>
+	<p>Gardez un oeil sur votre Raspberry Pi !</p>
   </div>
 
   
@@ -75,7 +75,7 @@ include('raspmonitor.php');
 	<!-- Panel -->
 	<div class="panel panel-info">
 	<div class="panel-heading">
-		<h3 class="panel-title">Informations du RaspberryPi</h3>
+		<h3 class="panel-title">Informations du Raspberry Pi</h3>
 	</div>
 	<div class="panel-body">
 		<p>IP : <?= raspmonitor("check_ip"); ?></br>
