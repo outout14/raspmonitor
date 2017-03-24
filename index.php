@@ -1,9 +1,10 @@
 ﻿<?php
+define('RASPMONITOR_VERSION', '0.1');
 
 /* Project under WTFPL licence */
 /* Projet sous la licence WTFPL */
 
-include('raspmonitor.php');
+require('classes/RaspStats.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ include('raspmonitor.php');
           <h3 class="panel-title">Informations de RaspMonitor</h3>
         </div>
         <div class="panel-body">
-          <p>Version : <?= $raspmonitor["version"]; ?></p>
+          <p>Version : <?= RASPMONITOR_VERSION ?></p>
         </div>
       </div>
       <!-- end panel -->
@@ -78,11 +79,11 @@ include('raspmonitor.php');
         </div>
         <div class="panel-body">
           <p>
-            IP : <?= raspmonitor("check_ip"); ?></br>
-            Température : <?= raspmonitor("check_temp"); ?> degrés.</br>
-            Version de PHP : <?= raspmonitor("php_version") ?></br>
-            Version d'Apache : <?= raspmonitor("apache_version") ?></br>
-            Informations de l'OS : <?= raspmonitor("os_infos") ?></br>
+            IP : <?= RaspStats::getIpAddress() ?><br>
+            Température : <?= RaspStats::getTemperature(); ?> degrés.<br>
+            Version de PHP : <?= RaspStats::getPHPVersion() ?><br>
+            Version d'Apache : <?= RaspStats::getApacheVersion() ?><br>
+            Informations de l'OS : <?= RaspStats::getOSInformation() ?><br>
           </p>
         </div>
       </div>
