@@ -1,22 +1,22 @@
 # RaspMonitor
 Juste un script de monitoring pour votre raspberrypi ;) 
 
-##Fonctionnalités : 
+## Fonctionnalités : 
 - Affiche l'IP du Raspberry 
 - Sa température 
 - Sa version de PHP & d'Apache 
 - D'autres informations sur l'OS 
 
-##Installation : 
+## Installation : 
 - Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspibian un serveur LAMP fonctionnel.
 - Téléchargez le script et placez le sur votre raspberrypi ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout ! . 
 
-##Ce script est ouvert a toutes sugestions ! 
+## Ce script est ouvert a toutes sugestions ! 
 
-##Capture d'écran : 
-http://outout.tech/downloads/raspmonitor.PNG
+## Capture d'écran : 
+![Capture d'écran](http://outout.tech/downloads/raspmonitor.PNG)
 
-##Licence : 
+## Licence : 
 
 Ce script est sous la licence WTFPL : 
 
