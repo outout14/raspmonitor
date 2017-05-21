@@ -14,7 +14,7 @@ Juste un script de monitoring pour votre raspberrypi ;)
 ## Ce script est ouvert a toutes sugestions ! 
 
 ## Capture d'écran : 
-![Capture d'écran](http://outout.tech/downloads/raspmonitor.PNG)
+![Capture d'écran](http://i.imgur.com/JMVIV5X.png)
 
 ## Licence : 
 

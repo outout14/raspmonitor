@@ -18,7 +18,7 @@ require('classes/RaspStats.php');
 
     <!-- Bootstrap -->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
-
+    <link href="assets/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -79,12 +79,24 @@ require('classes/RaspStats.php');
         </div>
         <div class="panel-body">
           <p>
-            IP : <?= RaspStats::getIpAddress() ?><br>
-            Température : <?= RaspStats::getTemperature(); ?> degrés.<br>
-            Version de PHP : <?= RaspStats::getPHPVersion() ?><br>
-            Version d'Apache : <?= RaspStats::getApacheVersion() ?><br>
-            Informations de l'OS : <?= RaspStats::getOSInformation() ?><br>
-            Version du kernel : <?= RaspStats::getOSKernel() ?><br>
+            <p>Adresse Ip :
+              <?= RaspStats::getIpAddress() ?>
+            </p>
+            <p>Version de PHP :
+              <?= RaspStats::getPHPVersion() ?>
+            </p>
+            <p>Version d'Apache' :
+              <?= RaspStats::getApacheVersion() ?>
+            </p>
+            <p>Information sur l'OS :
+              <?= RaspStats::getOSInformation() ?>
+            </p>
+            <p>Version du kernel :
+              <?= RaspStats::getOSKernel() ?></p>
+            <p>Température :
+            <input value="<?= RaspStats::getTemperature() ?>" id="tempValue">
+              <div id="raspitemp"></div>
+            </p>
           </p>
         </div>
       </div>
@@ -93,6 +105,8 @@ require('classes/RaspStats.php');
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/progressbar.js"></script>
+    <script src="assets/raspitempbar.js"></script>
   
   </body>
 </html>
