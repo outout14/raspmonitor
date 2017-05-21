@@ -53,4 +53,13 @@ abstract class RaspStats{
     public static function getOSInformation(){
         return php_uname();
     }
+    
+    /**
+     * Returns the system's KERNEL.
+     * @change I don't really like calling shell commands
+     * @return string
+    */
+    public static function getOSKernel(){
+        return exec('uname -r');
+    }
 }

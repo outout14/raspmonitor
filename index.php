@@ -1,5 +1,5 @@
-﻿<?php
-define('RASPMONITOR_VERSION', '0.1');
+<?php
+define('RASPMONITOR_VERSION', '0.2');
 
 /* Project under WTFPL licence */
 /* Projet sous la licence WTFPL */
@@ -54,7 +54,7 @@ require('classes/RaspStats.php');
     <!-- Jumbo -->
     <div class="jumbotron" style="padding: 1%">
       <h1>RaspMonitor</h1>
-      <p>Gardez un œil sur votre Raspberry Pi !</p>
+      <p>Gardez un œil sur votre RaspberryPi !</p>
     </div>
 
 
@@ -84,6 +84,7 @@ require('classes/RaspStats.php');
             Version de PHP : <?= RaspStats::getPHPVersion() ?><br>
             Version d'Apache : <?= RaspStats::getApacheVersion() ?><br>
             Informations de l'OS : <?= RaspStats::getOSInformation() ?><br>
+            Version du kernel : <?= RaspStats::getOSKernel() ?><br>
           </p>
         </div>
       </div>
