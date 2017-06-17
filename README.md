@@ -1,5 +1,5 @@
 # RaspMonitor
-Juste un script de monitoring pour votre raspberrypi ;) 
+Un script de monitoring pour votre raspberry pi ;) 
 
 ## Fonctionnalités : 
 - Affiche l'IP du Raspberry 
