@@ -1,5 +1,5 @@
 # RaspMonitor
-Juste un script de monitoring pour votre raspberrypi ;) 
+Un script de monitoring pour votre raspberry pi ;) 
 
 ## Fonctionnalités : 
 - Affiche l'IP du Raspberry 
@@ -8,8 +8,8 @@ Juste un script de monitoring pour votre raspberrypi ;)
 - D'autres informations sur l'OS 
 
 ## Installation : 
-- Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspibian un serveur LAMP fonctionnel.
-- Téléchargez le script et placez le sur votre raspberrypi ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout ! . 
+- Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspbian et un serveur LAMP fonctionnel.
+- Téléchargez le script et placez le sur votre raspberry pi, ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout !
 
 ## Ce script est ouvert a toutes sugestions ! 
 
