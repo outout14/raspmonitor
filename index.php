@@ -44,7 +44,7 @@ require('classes/RaspStats.php');
             <li class="active"><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://outout.tech/">Site du créateur</a></li>
+            <li><a href="https://outout.tech/">Site du développeur</a></li>
           </ul>
         </div>
       </div>
@@ -54,7 +54,7 @@ require('classes/RaspStats.php');
     <!-- Jumbo -->
     <div class="jumbotron" style="padding: 1%">
       <h1>RaspMonitor</h1>
-      <p>Gardez un œil sur votre RaspberryPi !</p>
+      <p>Gardez un œil sur votre Raspberry Pi !</p>
     </div>
 
 
