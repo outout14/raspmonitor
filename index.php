@@ -91,7 +91,7 @@ require('classes/RaspStats.php');
             <p>Information sur l'OS :
               <?= RaspStats::getOSInformation() ?>
             </p>
-            <p>Version du noyeau :
+            <p>Version du noyau :
               <?= RaspStats::getOSKernel() ?></p>
             <p>Température :
             <input value="<?= RaspStats::getTemperature() ?>" id="tempValue">
