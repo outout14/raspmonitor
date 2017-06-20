@@ -41,7 +41,7 @@ require('classes/RaspStats.php');
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Acceuil <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://outout.tech/">Site du développeur</a></li>
