@@ -5,6 +5,9 @@ define('RASPMONITOR_VERSION', '0.2');
 /* Projet sous la licence WTFPL */
 
 require('classes/RaspStats.php');
+
+// Récupérer la version du serveur web
+$webserver_version = RaspStats::getWebserverVersion();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,9 +88,16 @@ require('classes/RaspStats.php');
             <p>Version de PHP :
               <?= RaspStats::getPHPVersion() ?>
             </p>
-            <p>Version d'Apache :
-              <?= RaspStats::getApacheVersion() ?>
-            </p>
+
+            <?php if(!$webserver_version): ?>
+              <p>Impossible de trouver la version du serveur</p>
+            <?php else: ?>
+              <p>Version <?= $webserver_version['server'] ? 'de' : 'du serveur HTTP' ?> :
+                <?= $webserver_version['version'] ?>
+              </p>
+            <?php endif; ?>
+
+            
             <p>Information sur l'OS :
               <?= RaspStats::getOSInformation() ?>
             </p>

@@ -38,12 +38,31 @@ abstract class RaspStats{
     }
 
     /**
+     * Returns an array with server name and server version by using some detection techniques
      * @see apache_get_version()
-     * @return string
+     * @return array|bool
      */
-    public static function getApacheVersion(){
-        $version = apache_get_version();
-        return ($version ? $version : 'Failed to get Apache version');
+    public static function getWebserverVersion(){
+        // Is there a server variable to get the server version ?
+
+        if(isset($_SERVER['SERVER_SOFTWARE'])){
+            return [
+                'server' => null,
+                'version' => $_SERVER['SERVER_SOFTWARE']
+            ];
+        }
+
+        // PHP provides a function to get Apache's version
+        if(function_exists('apache_get_version')){
+            $version = apache_get_version();
+            return [
+                'server' => 'Apache',
+                'version' => $version ? $version : 'Failed to get Apache version'
+            ];
+        }
+
+        // Maybe handle other server types ?
+        return false;
     }
 
     /**
