@@ -40,7 +40,7 @@ abstract class RaspStats{
     /**
      * Returns an array with server name and server version by using some detection techniques
      * @see apache_get_version()
-     * @return array
+     * @return array|bool
      */
     public static function getWebserverVersion(){
         // Is there a server variable to get the server version ?
