@@ -1,13 +1,14 @@
 <?php
-define('RASPMONITOR_VERSION', '0.2');
+define('RASPMONITOR_VERSION', '1');
 
 /* Project under WTFPL licence */
 /* Projet sous la licence WTFPL */
 
-require('classes/RaspStats.php');
+require('php/RaspStats.php');
 
 // Récupérer la version du serveur web
 $webserver_version = RaspStats::getWebserverVersion();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +17,7 @@ $webserver_version = RaspStats::getWebserverVersion();
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>RaspMonitor</title>
+    <title>RaspMonitor - <?= RaspStats::getSrvName() ?></title>
 
     <!-- Bootstrap -->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,9 @@ $webserver_version = RaspStats::getWebserverVersion();
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="logo.png" />
   </head>
   <body>
 
@@ -47,6 +50,7 @@ $webserver_version = RaspStats::getWebserverVersion();
             <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+			<li><a href="https://github.com/outout14/raspmonitor">Github RaspMonitor</a></li>
             <li><a href="https://outout.tech/">Site du développeur</a></li>
           </ul>
         </div>
@@ -60,35 +64,30 @@ $webserver_version = RaspStats::getWebserverVersion();
       <p>Gardez un œil sur votre Raspberry Pi !</p>
     </div>
 
-
     <!-- Container -->
     <div class="container">
 
       <!-- Panel -->
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title">Informations de RaspMonitor</h3>
-        </div>
-        <div class="panel-body">
-          <p>Version : <?= RASPMONITOR_VERSION ?></p>
-        </div>
-      </div>
-      <!-- end panel -->
-
-      <!-- Panel -->
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">Informations du Raspberry Pi</h3>
+          <h3 class="panel-title">Informations de <?= RaspStats::getSrvName() ?></h3>
         </div>
         <div class="panel-body">
           <p>
             <p>Adresse Ip :
               <?= RaspStats::getIpAddress() ?>
             </p>
+			<p>Nom réseau :
+			<?= RaspStats::getSrvName() ?>
+			</p>
             <p>Version de PHP :
-              <?= RaspStats::getPHPVersion() ?>
+              <a href="<?= RaspStats::getPHPVersion()[1] ?>" target="_blank"><?= RaspStats::getPHPVersion()[0] ?></a>
             </p>
 
+			<p>Serveur HTTP :
+			<?= RaspStats::getServerSoftware() ?>
+			</p>
+			
             <?php if(!$webserver_version): ?>
               <p>Impossible de trouver la version du serveur</p>
             <?php else: ?>
@@ -101,22 +100,60 @@ $webserver_version = RaspStats::getWebserverVersion();
             <p>Information sur l'OS :
               <?= RaspStats::getOSInformation() ?>
             </p>
+			
+			<?php
+			if(!RaspStats::checkLinux() == False) {
+			?>
             <p>Version du noyau :
               <?= RaspStats::getOSKernel() ?></p>
             <p>Température :
             <input value="<?= RaspStats::getTemperature() ?>" id="tempValue">
-              <div id="raspitemp"></div>
-            </p>
-          </p>
+              <div id="raspitemp"></div></p>
+			<?php 
+			}
+			?>
+        </div>
+      </div>
+      <!-- end panel -->
+
+	  <!-- Panel -->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Ports ouverts sur <?= RaspStats::getSrvName() ?></h3>
+        </div>
+        <div class="panel-body">
+          <p>Port SSH : <?= RaspStats::checkSSH() ?></p>
+		  <p>Port FTP : <?= RaspStats::checkFTP() ?></p>
+        </div>
+      </div>
+      <!-- end panel -->
+
+	  <!-- Panel -->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Informations de RaspMonitor</h3>
+        </div>
+        <div class="panel-body">
+          <p>Version : <?= RASPMONITOR_VERSION ?></p>
         </div>
       </div>
       <!-- end panel -->
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script src="assets/jquery.js"></script>
     <script src="assets/bootstrap.min.js"></script>
     <script src="assets/progressbar.js"></script>
     <script src="assets/raspitempbar.js"></script>
-  
+	<script src="assets/notify.min.js"></script>
+	<?php 
+	// IF WINDOWS //
+	if(RaspStats::checkLinux() == False) 
+	{
+	?>
+<script src="assets/win.js"></script>
+	<?php
+	}
+	?>
   </body>
 </html>

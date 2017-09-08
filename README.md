@@ -1,37 +1,44 @@
-# RaspMonitor
-Un script de monitoring pour votre raspberry pi ;) 
+![LOGO](https://raw.githubusercontent.com/outout14/raspmonitor/master/logo.png | width=48)
+# RaspMonitor 
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-## Fonctionnalités : 
-- Affiche l'IP du Raspberry 
-- Sa température 
-- Sa version de PHP & d'Apache 
-- D'autres informations sur l'OS 
+RaspMonitor, un petit script pour vérifier votre raspberrypi via votre navigateur Web !
+RaspMonitor vous permet de voir son adresse IP, son nom réseau : raspichou sa version de PHP le serveur HTTP utilisé et sa version, les ports ouverts (FTP & SSH), sa température et plus encore ! Tu peux même l'utiliser sur d'autres serveurs _(attention certaines fonctionnailités risque de ne pas fonctionner)_
 
-## Installation : 
-- Vous avez besoin de : Un RaspberryPi (testé sur le modèle 3 type B), Raspbian et un serveur LAMP fonctionnel.
-- Téléchargez le script et placez le sur votre raspberry pi, ouvrez votre navigateur et accèdez a la page ``index.php`` et c'est tout !
+## Capture d'ecran 
+![capture](https://github.com/outout14/raspmonitor/blob/master/capture.png?raw=true)
 
-## Ce script est ouvert a toutes sugestions ! 
+## Pour commencer
+Pour installer RaspMonitor c'est facile : 
 
-## Capture d'écran : 
-![Capture d'écran](http://i.imgur.com/JMVIV5X.png)
+### Pré-requis
+- Un serveur Web avec PHP 5.3.0 ou plus
+- Avoir activé les .htaccess _(pour la sécurité)_
 
-## Licence : 
+### Installation
+- Téléchargez la dernière version (zip) de raspmonitor sur le [github](https://github.com/outout14/raspmonitor/releases)
+- Extrayez l'archive zip (sous linux avec ```unzip raspmonitor-master.zip```)
+- Copiez le contenu de l'archive dans le répertoire de votre serveur Web
+- Editez le fichier ```settings.ini``` avec les paramètres de votre choix
+- Renommez le fichier ```htaccess.sample``` en ```.htaccess```
+- Vous pouvez, une fois lus supprimer les fichiers ```LICENSE``` et ```readme.md``` de votre serveur 
 
-Ce script est sous la licence WTFPL : 
+## Démarrage
+Accèdez tout simplement via votre navigateur a raspmonitor !
 
-````
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                    Version 2, December 2004
+## Fabriqué avec
+- Des bonnes framboises et de la crème fouêté
+- PHPStorm _(parceque VCS c'est nul)_
+- [Jquery](https://jquery.com)
+- [NotifyJS](https://notifyjs.com)
+- [Bootstrap](https://getbootstrap.com/)
 
- Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+## Auteurs
+* **Maël** _alias_ [@outout14](https://github.com/outout14)
+* **Math** _alias_ [@lapin-b](https://github.com/lapin-b)
+[Voir plus](https://github.com/outout14/raspmonitor/contributors)_
 
- Everyone is permitted to copy and distribute verbatim or modified
- copies of this license document, and changing it is allowed as long
- as the name is changed.
+## License
 
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+Ce projet est sous licence ``WTFTPL`` - voir le fichier [LICENSE](https://github.com/outout14/raspmonitor/blob/master/LICENSE) pour plus d'informations
 
-  0. You just DO WHAT THE FUCK YOU WANT TO.
-````
