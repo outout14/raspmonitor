@@ -1,4 +1,4 @@
-![LOGO](https://raw.githubusercontent.com/outout14/raspmonitor/master/logo.png | width=48)
+![LOGO](https://raw.githubusercontent.com/outout14/raspmonitor/master/logo.png)
 # RaspMonitor 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
@@ -6,7 +6,7 @@ RaspMonitor, un petit script pour vérifier votre raspberrypi via votre navigate
 RaspMonitor vous permet de voir son adresse IP, son nom réseau : raspichou sa version de PHP le serveur HTTP utilisé et sa version, les ports ouverts (FTP & SSH), sa température et plus encore ! Tu peux même l'utiliser sur d'autres serveurs _(attention certaines fonctionnailités risque de ne pas fonctionner)_
 
 ## Capture d'ecran 
-![capture](https://github.com/outout14/raspmonitor/blob/master/capture.png?raw=true)
+![SCREEN](https://raw.githubusercontent.com/outout14/raspmonitor/master/capture.PNG)
 
 ## Pour commencer
 Pour installer RaspMonitor c'est facile : 
