@@ -132,13 +132,13 @@ abstract class RaspStats{
 		$srv_soft = $_SERVER["SERVER_SOFTWARE"];
 
 
-		if(!strpos($srv_soft, "Apache"))
+		if(strpos($srv_soft, 'Apache') !== false)
 		{
 			$srvsoft = "Apache";
 		}
-		elseif(!strpos($srv_soft, "NGNIX"))
+		elseif(strpos($srv_soft, "ngnix") !== false)
 		{
-			$srvsoft = "NGINX";
+			$srvsoft = "NGNIX";
 		}
 		else
 		{
