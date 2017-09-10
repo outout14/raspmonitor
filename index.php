@@ -121,7 +121,7 @@ $phpversion = RaspStats::getPHPVersion();
                 <p>Nom réseau : <?= RaspStats::getSrvName() ?></p>
                 <p>
                     Version de PHP :
-                    <a href="<?= $phpversion[1] ?>" target="_blank"><?= RaspStats::getPHPVersion()[0] ?></a>
+                    <a href="<?= $phpversion[1] ?>" target="_blank"><?= $phpversion[0] ?></a>
                 </p>
 
                 <p>Serveur HTTP : <?= RaspStats::getServerSoftware() ?></p>
