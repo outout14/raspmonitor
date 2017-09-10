@@ -7,14 +7,8 @@
 require("ini_parser.php");
 abstract class RaspStats{	
 	
-	public static function checkLinux(){
-		if (stripos(php_uname(), 'Win') !== FALSE) {
-			//WINDOWS
-			return False;
-		}
-
-		// Linux
-		return true;
+	public static function isLinux(){
+	    return stripos(php_uname(), 'Win') === FALSE;
 	}
 	
     /**

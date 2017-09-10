@@ -137,7 +137,7 @@ $phpversion = RaspStats::getPHPVersion();
 
                 <p>Information sur l'OS : <?= RaspStats::getOSInformation() ?></p>
 
-                <?php if(RaspStats::checkLinux()): ?>
+                <?php if(RaspStats::isLinux()): ?>
                     <p>Version du noyau : <?= RaspStats::getOSKernel() ?></p>
                     <p>
                         Température :
@@ -182,7 +182,7 @@ $phpversion = RaspStats::getPHPVersion();
 <script src="assets/raspitempbar.js"></script>
 <script src="assets/notify.min.js"></script>
 <script src="php/notify.php<?= $notify_atributs ?>"></script>
-<?php if(!RaspStats::checkLinux()): // Host is running Windows ?>
+<?php if(!RaspStats::isLinux()): // Host is running Windows ?>
     <script src="assets/win.js"></script>
 <?php endif; ?>
 </body>
