@@ -30,7 +30,7 @@ abstract class RaspStats{
             return $milidegrees / 1000;
 		}
 
-		return "9999999"; // :D
+		return 9999999; // :D
     }
 
     /**
@@ -55,16 +55,16 @@ abstract class RaspStats{
     /**
      * @see phpversion()
      *
-     * @return string
+     * @return array
      */
     public static function getPHPVersion(){
 		$phpver = substr(phpversion(), 0, 6);
 		$changelog = "https://php.net/releases/".str_replace(".", "_", $phpver).".php";
-		$returns = array(
-			"$phpver",
-			"$changelog"
-		);
-		return $returns;
+
+		return [
+			$phpver,
+			$changelog
+		];
     }
 
     /**
