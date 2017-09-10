@@ -36,7 +36,7 @@ Accèdez tout simplement via votre navigateur a raspmonitor !
 ## Auteurs
 * **Maël** _alias_ [@outout14](https://github.com/outout14)
 * **Math** _alias_ [@lapin-b](https://github.com/lapin-b)
-[Voir plus](https://github.com/outout14/raspmonitor/contributors)_
+* [Voir plus](https://github.com/outout14/raspmonitor/contributors)
 
 ## License
 

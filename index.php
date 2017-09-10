@@ -5,6 +5,16 @@ define('RASPMONITOR_VERSION', '1');
 /* Projet sous la licence WTFPL */
 
 require('php/RaspStats.php');
+require('php/update.php');
+
+// NOTIFY ATTRUBUTS FOR NOTIFY.PHP //
+$notify_atributs = "?";
+
+if(isset($_GET['update']))
+{
+	$update = checkUpdate();
+	$notify_atributs = $notify_atributs."update=".$update;
+}
 
 // Récupérer la version du serveur web
 $webserver_version = RaspStats::getWebserverVersion();
@@ -30,8 +40,42 @@ $webserver_version = RaspStats::getWebserverVersion();
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="logo.png" />
   </head>
-  <body>
+  <body onload="loadPage()">
 
+  <div class="cssload-wrap" id="loader">
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	<div class="cssload-circle"></div>
+	</div>
+
+<div id="pagecontent">
     <!-- NAV -->
     <nav class="navbar navbar-default" style="margin: 0">
       <div class="container-fluid">
@@ -50,6 +94,7 @@ $webserver_version = RaspStats::getWebserverVersion();
             <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+			<li><a href="?update">Vérifier l'existance de mise à jour</a></li>
 			<li><a href="https://github.com/outout14/raspmonitor">Github RaspMonitor</a></li>
             <li><a href="https://outout.tech/">Site du développeur</a></li>
           </ul>
@@ -140,12 +185,14 @@ $webserver_version = RaspStats::getWebserverVersion();
       <!-- end panel -->
 
     </div>
-
+</div>
 	<script src="assets/jquery.js"></script>
+	<script src="assets/loader.js"></script>
     <script src="assets/bootstrap.min.js"></script>
     <script src="assets/progressbar.js"></script>
     <script src="assets/raspitempbar.js"></script>
 	<script src="assets/notify.min.js"></script>
+	<script src="php/notify.php<?= $notify_atributs ?>"></script>
 	<?php 
 	// IF WINDOWS //
 	if(RaspStats::checkLinux() == False) 
