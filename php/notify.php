@@ -1,4 +1,5 @@
 ﻿<?php
+include("lang/lang.php");
 header("Content-Type: application/javascript");
 
 function notify($text = "Une erreur système est survenue.", $class = "error")
@@ -17,13 +18,13 @@ function notify($text = "Une erreur système est survenue.", $class = "error")
 if(isset($_GET['update']) && is_numeric($_GET['update'])) {
 	switch ($_GET['update']) {
     case 666:
-		notify("Impossible de vérifier l'existance de mises à jour, connexion au serveur impossible ", "error");
+		notify($lang['ALERT_UPDATE_A'], "error");
 		break;
     case 1:
-        notify("Une mise à jour est disponible, rendez vous vite sur le github de RaspMonitor!", "success"); 
+        notify($lang['ALERT_UPDATE_B'], "success"); 
         break;
     case 0:
-        notify("Aucune mise à jour n'est disponible. Vous pouvez dormir tranquille !", "info");
+        notify($lang['ALERT_UPDATE_C'], "info");
         break;
     default:
        notify();

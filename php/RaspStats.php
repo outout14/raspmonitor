@@ -7,16 +7,8 @@
 require("ini_parser.php");
 abstract class RaspStats{	
 	
-	public static function checkLinux(){
-		if (stripos(php_uname(), 'Win') !== FALSE) {
-			//WINDOWS
-			return False;
-		}
-		else
-		{
-			//NOT WINDOWS
-			return True;
-		}
+	public static function isLinux(){
+	    return stripos(php_uname(), 'Win') === FALSE;
 	}
 	
     /**
@@ -28,15 +20,11 @@ abstract class RaspStats{
     public static function getTemperature(){
 		if(file_exists('/sys/class/thermal/thermal_zone0/temp'))
 		{
-        $milidegrees = (int) file_get_contents('/sys/class/thermal/thermal_zone0/temp');
-        $degrees = $milidegrees / 1000;
-		     
+		    $milidegrees = (int) file_get_contents('/sys/class/thermal/thermal_zone0/temp');
+            return $milidegrees / 1000;
 		}
-		else
-		{
-		$degrees = "9999999"; // :D
-		}
-		return $degrees;
+
+		return 9999999; // :D
     }
 
     /**
@@ -54,25 +42,23 @@ abstract class RaspStats{
 			//IS NOT LOCALHOST
 			return $_SERVER["SERVER_ADDR"];
 		}
-		else
-		{
-			return getHostByName(php_uname('n'));
-		}
+
+        return getHostByName(php_uname('n'));
     }
 
     /**
      * @see phpversion()
      *
-     * @return string
+     * @return array
      */
     public static function getPHPVersion(){
 		$phpver = substr(phpversion(), 0, 6);
 		$changelog = "https://php.net/releases/".str_replace(".", "_", $phpver).".php";
-		$returns = array(
-			"$phpver",
-			"$changelog"
-		);
-		return $returns;
+
+		return [
+			$phpver,
+			$changelog
+		];
     }
 
     /**
@@ -134,18 +120,15 @@ abstract class RaspStats{
 
 		if(strpos($srv_soft, 'Apache') !== false)
 		{
-			$srvsoft = "Apache";
+			return "Apache";
 		}
-		elseif(strpos($srv_soft, "ngnix") !== false)
+
+		if(strpos($srv_soft, "ngnix") !== false)
 		{
-			$srvsoft = "NGNIX";
+			return "NGNIX";
 		}
-		else
-		{
-			$srvsoft = $srv_soft;
-		}
-		
-		return $srvsoft;
+
+        return $srv_soft;
 	}
 	public static function checkSSH(){
 		$configini = iniParser(False);
@@ -153,11 +136,10 @@ abstract class RaspStats{
 		$connection =  @socket_connect($socket, getHostByName(php_uname('n')), $configini["ssh_port"]);
 
 		if( $connection ){
-			echo 'Ouvert';
+			return 'Ouvert';
 		}
-		else {
-			echo 'Fermé';
-		}
+
+		return 'Fermé';
 	}
 	public static function checkFTP(){
 		$configini = iniParser(False);
@@ -165,10 +147,9 @@ abstract class RaspStats{
 		$connection =  @socket_connect($socket, getHostByName(php_uname('n')), $configini["ftp_port"]);
 
 		if( $connection ){
-			echo 'Ouvert';
+			return 'Ouvert';
 		}
-		else {
-			echo 'Fermé';
-		}
+
+		return 'Fermé';
 	}
 }

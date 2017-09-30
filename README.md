@@ -9,7 +9,6 @@ RaspMonitor vous permet de voir son adresse IP, son nom réseau : raspichou sa v
 ![SCREEN](https://raw.githubusercontent.com/outout14/raspmonitor/master/capture.PNG)
 
 ## Pour commencer
-Pour installer RaspMonitor c'est facile : 
 
 ### Pré-requis
 - Un serveur Web avec PHP 5.3.0 ou plus
