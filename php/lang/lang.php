@@ -1,23 +1,24 @@
 <?php
+/*
+ *
+ * SIMPLE SCRIPT TO AUTOMATIC OR MANUAL SELECT LANGAGE.
+ *
+ * Priority order :
+ * 1 -> $_SESSION
+ * 2 -> Config File
+ *
+ */
 session_start();
 header('Cache-control: private'); // IE 6
+require_once(__DIR__ . "/../class/ini_parser.php");
+$iniConf = iniParser(false);
 
-if(isset($_GET['lang']))
-{
-    $lang = $_GET['lang'];
-    $_SESSION['lang'] = $lang;
-    setcookie('lang', $lang, time() + (3600 * 24 * 30));
-}
-else if(isset($_SESSION['lang']))
-{
+
+if (isset($_SESSION['lang'])) {
     $lang = $_SESSION['lang'];
-}
-else if(isset($_COOKIE['lang']))
-{
-    $lang = $_COOKIE['lang'];
-}
-else
-{
+} elseif (isset($iniConf['lang'])) {
+    $lang = $iniConf['lang'];
+} else {
     $lang = 'en';
 }
 
@@ -29,7 +30,7 @@ switch ($lang) {
     case 'fr':
         $lang_file = 'fr.php';
         break;
-	
+
     default:
         $lang_file = 'en.php';
 

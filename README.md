@@ -1,43 +1,36 @@
-![LOGO](https://raw.githubusercontent.com/outout14/raspmonitor/master/logo.png)
+![LOGO](https://outout.xyz/files/rspmonitor.png)
 # RaspMonitor 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 RaspMonitor, un petit script pour vérifier votre raspberrypi via votre navigateur Web !
 RaspMonitor vous permet de voir son adresse IP, son nom réseau : raspichou sa version de PHP le serveur HTTP utilisé et sa version, les ports ouverts (FTP & SSH), sa température et plus encore ! Tu peux même l'utiliser sur d'autres serveurs _(attention certaines fonctionnailités risque de ne pas fonctionner)_
 
-## Capture d'ecran 
-![SCREEN](https://raw.githubusercontent.com/outout14/raspmonitor/master/capture.PNG)
+RaspMonitor is a script to check many informations about our raspberrypi (or other linux machine) with our web browser !
+RaspMonitor it allows you to view his IP adress, his LAN name, his PHP Version, and more ! 
+_(Some features are disabled on Windows)_
 
-## Pour commencer
+### Requirements 
+- A Web Server with PHP 5.3.0 (or higher)
+- Have activated ```.htaccess``` (on apache)
 
-### Pré-requis
-- Un serveur Web avec PHP 5.3.0 ou plus
-- Avoir activé les .htaccess _(pour la sécurité)_
+### INSTALL 
+- [Download the last version of raspmonitor](https://github.com/outout14/raspmonitor/releases)
+- Extract it
+- Copy raspmonitor into our web server directory (where you want)
+- Edit ```settings.ini``` file with our parameters 
+- Rename ```htaccess.sample``` to ```.htaccess``` (on apache)
+- After, you can delete ```LICENSE``` and ```README``` files on our server
 
-### Installation
-- Téléchargez la dernière version (zip) de raspmonitor sur le [github](https://github.com/outout14/raspmonitor/releases)
-- Extrayez l'archive zip (sous linux avec ```unzip raspmonitor-master.zip```)
-- Copiez le contenu de l'archive dans le répertoire de votre serveur Web
-- Editez le fichier ```settings.ini``` avec les paramètres de votre choix
-- Renommez le fichier ```htaccess.sample``` en ```.htaccess```
-- Vous pouvez, une fois lus supprimer les fichiers ```LICENSE``` et ```readme.md``` de votre serveur 
-
-## Démarrage
-Accèdez tout simplement via votre navigateur a raspmonitor !
-
-## Fabriqué avec
-- Des bonnes framboises et de la crème fouêté
-- PHPStorm _(parceque VCS c'est nul)_
+## Made With 
+- PHPStorm _(because VCS was shit)_
 - [Jquery](https://jquery.com)
 - [NotifyJS](https://notifyjs.com)
 - [Bootstrap](https://getbootstrap.com/)
 
-## Auteurs
+## Autors 
 * **Maël** _alias_ [@outout14](https://github.com/outout14)
 * **Math** _alias_ [@lapin-b](https://github.com/lapin-b)
-* [Voir plus](https://github.com/outout14/raspmonitor/contributors)
+* [View More or contribute !](https://github.com/outout14/raspmonitor/contributors)
 
 ## License
-
-Ce projet est sous licence ``WTFTPL`` - voir le fichier [LICENSE](https://github.com/outout14/raspmonitor/blob/master/LICENSE) pour plus d'informations
-
+This project is under ``WTFPL`` license - view [LICENSE](https://github.com/outout14/raspmonitor/blob/master/LICENSE) file for more informations.

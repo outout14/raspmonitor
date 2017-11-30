@@ -12,7 +12,7 @@ $lang['LANG_NAME'] = "fr - Français";
 //NAV
 $lang['NAV_HOME'] = "Moniteur";
 $lang['NAV_UPDATE'] = "Vérifier l'existance de mises à jour";
-$lang['NAV_GITHUB'] = "Github RaspMonitor"; 
+$lang['NAV_GITHUB'] = "Github RaspMonitor";
 $lang['NAV_DEVSITE'] = "Site du développeur";
 
 //JUMBO
@@ -31,21 +31,20 @@ $lang['INFOS_TEMP'] = "Température :";
 
 //PORTS 
 $lang['PORTS_TITLE'] = "Ports ouverts sur ";
-$lang['PORTS_SSH'] = "Port SSH"; 
+$lang['PORTS_SSH'] = "Port SSH";
 $lang['PORTS_FTP'] = "Port FTP";
 $lang['PORT_OPEN'] = "Ouvert";
-$lang['PORT_CLOSED'] = "Fermé"; 
+$lang['PORT_CLOSED'] = "Fermé";
 
 //RASPINFOS
 $lang['RASPINFO_TITLE'] = "Informations de RaspMonitor";
 $lang['RASPINFO_VERSION'] = "Version :";
 
 
-
-
 //Alerts
-
-/* UPDATE0 */
-$lang['ALERT_UPDATE_A'] = "Impossible de vérifier l'existance de mises à jour, connexion au serveur impossible."; 
+/* UPDATE */
+$lang['ALERT_UPDATE_A'] = "Impossible de vérifier l'existance de mises à jour, connexion au serveur impossible.";
 $lang['ALERT_UPDATE_B'] = "Une mise à jour est disponible, rendez vous vite sur le github de RaspMonitor.";
 $lang['ALERT_UPDATE_C'] = "Aucune mise à jour n'est disponible. Vous pouvez dormir tranquille !";
+/* WIN */
+$lang['ALERT_WIN'] = "La machine hôte tourne sous Windows, certaines fonctionnalités seront inutilisables.";

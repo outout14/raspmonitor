@@ -7,8 +7,8 @@
 <script src="php/notify.php{$notify_atributs}"></script>
 
 {if !$isLinux}
-<!-- WINDAUSE ALERT -->
-<script src="assets/win.js"></script>
+    <!-- WINDAUSE ALERT -->
+    <script src="assets/win.js"></script>
 {/if}
 </body>
 </html>
