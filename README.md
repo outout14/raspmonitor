@@ -2,9 +2,6 @@
 # RaspMonitor 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-RaspMonitor, un petit script pour vérifier votre raspberrypi via votre navigateur Web !
-RaspMonitor vous permet de voir son adresse IP, son nom réseau : raspichou sa version de PHP le serveur HTTP utilisé et sa version, les ports ouverts (FTP & SSH), sa température et plus encore ! Tu peux même l'utiliser sur d'autres serveurs _(attention certaines fonctionnailités risque de ne pas fonctionner)_
-
 RaspMonitor is a script to check many informations about our raspberrypi (or other linux machine) with our web browser !
 RaspMonitor it allows you to view his IP adress, his LAN name, his PHP Version, and more ! 
 _(Some features are disabled on Windows)_
